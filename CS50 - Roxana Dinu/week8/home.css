@@ -1,0 +1,18 @@
+.centered
+{
+   text-align: center;
+}
+
+.large
+{
+    color: #DA12A5;
+    font-size: large;
+}
+.medium
+{
+    font-size: medium;
+}
+.small
+{
+    font-size: small;
+}

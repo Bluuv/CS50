@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/index" method="get">
+        <div class="section">
+            <table>
+                <thead>
+                    <tr>
+                    <th>Stock Symbol</th>
+                    <th>Transaction Type</th>
+                    <th>Stock Price</th>
+                    <th>Number of Shares</th>
+                    <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for element in results %}
+                    <tr>
+                        <td>{{element.symbol}}</td>
+                        <td>{{element.transaction_type}}</td>
+                        <td>{{element.price}}</td>
+                        <td>{{element.number_of_shares}}</td>
+                        <td>{{element.time}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </div>
+    </form>
+{% endblock %}

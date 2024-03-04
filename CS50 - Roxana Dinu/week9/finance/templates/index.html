@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/index" method="get">
+        <div class="section">
+            <table>
+                <thead>
+                    <tr>
+                    <th>Cash Balance</th>
+                    <th>Total Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <td>{{cashBalance}}</td>
+                <td>{{totalBalance}}</td>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                    <th>Owned Stocks</th>
+                    <th>Nr. of Shares</th>
+                    <th>Current price of stock</th>
+                    <th>Total Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for element in results %}
+                    <tr>
+                        <td>{{element.symbol}}</td>
+                        <td>{{element.number_of_shares}}</td>
+                        <td>{{element.currentPrice}}</td>
+                        <td>{{element.totalValue}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </div>
+    </form>
+{% endblock %}
